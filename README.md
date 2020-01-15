@@ -1,13 +1,14 @@
 # YOURLS Anonymise Plugin
-
 This plugin stops [YOURLS](http://yourls.org) recording users' IP addresses and user-agents. Since IPs aren't collected, neither are country codes.
 
 It'll somewhat diminish the amount of data in your analytics, but click counts, dates, and referrers are maintained.
 
 A very full-on way to avoid handling personal data.
 
-# MIT License
+## Installation
+Get the latest release and instructions from the [Releases tab](https://github.com/wlabarron/yourls-anonymise/releases).
 
+## MIT License
 Copyright (c) 2010 Ubicoo - http://www.ubicoo.com
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
