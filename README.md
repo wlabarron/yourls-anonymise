@@ -4,11 +4,24 @@ This plugin stops [YOURLS](http://yourls.org) recording users' IP addresses and 
 It'll somewhat diminish the amount of data in your analytics, but click counts, dates, and referrers are maintained.
 
 ## Removing data you've already collected
-Note that the plugin won't retroactively anonymise data you've already stored. To do that, you can run the SQL command
+This plugin won't retroactively delete data you've already stored. To do that:
+
+### Step 1
+Backup your database in case you delete more than expected.
+
+### Step 2
+To anonymise visitor data you've already collected, run the following SQL command on your server:
 ``` sql
-UPDATE `YOUR_TABLE_PREFIX_log` SET `user_agent`="-",`ip_address`="-",`country_code`="-" WHERE 1
+UPDATE `YOUR_TABLE_PREFIX_log` SET `user_agent`="-",`ip_address`="-",`country_code`="" WHERE 1
 ```
-where `YOUR_TABLE_PREFIX` is the prefix defined in your config file. Backup your database first in case you delete more than you expect!
+Change `YOUR_TABLE_PREFIX` to the prefix defined in your config file (by default, `yourls_`).
+
+### Step 3
+If you also want to delete the IP addresses of the people who created the links, run:
+``` sql
+UPDATE `YOUR_TABLE_PREFIX_url` SET `ip`="-" WHERE 1
+```
+Again, `YOUR_TABLE_PREFIX` is the prefix defined in your config file (by default, `yourls_`).
 
 ## Installation
 Get the latest release and instructions from the [Releases tab](https://github.com/wlabarron/yourls-anonymise/releases).
