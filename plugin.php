@@ -12,7 +12,7 @@ yourls_add_filter( 'get_IP', 'wlabarron_anonymise_IP' );
 yourls_add_filter( 'get_user_agent', 'wlabarron_anonymise_user_agent' );
 
 function wlabarron_anonymise_IP( $ip ) {
-    return "-";
+    return "";
 }
 
 function wlabarron_anonymise_user_agent( $ua ) {
