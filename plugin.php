@@ -10,12 +10,17 @@
 
 yourls_add_filter( 'get_IP', 'wlabarron_anonymise_IP' );
 yourls_add_filter( 'get_user_agent', 'wlabarron_anonymise_user_agent' );
+yourls_add_filter( 'get_referrer', 'wlabarron_anonymise_referrer' );
 
 function wlabarron_anonymise_IP( $ip ) {
     return "-";
 }
 
 function wlabarron_anonymise_user_agent( $ua ) {
+    return "-";
+}
+
+function wlabarron_anonymise_referrer( $referrer ) {
     return "-";
 }
 
