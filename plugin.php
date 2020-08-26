@@ -23,7 +23,7 @@ function wlabarron_anonymise_user_agent( $ua ) {
 
 function wlabarron_anonymise_referrer( $referrer ) {
     return "-";
-
+}
   
 function wlabarron_shunt_country( $location = false, $ip = '', $default = '' ) {
     return "";
